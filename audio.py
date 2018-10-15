@@ -127,12 +127,10 @@ async def list(con):
 @bot.command(pass_context=True)
 async def pause(ctx):
     players[ctx.message.server.id].pause()
-    await bot.say("Lagu di pause")
     
 @bot.command(pass_context=True)
 async def resume(ctx):
     players[ctx.message.server.id].resume()
-              await bot.say("Lagu di resume")
       
 @bot.command(pass_context=True)
 async def volume(ctx, vol:float):
@@ -143,7 +141,6 @@ async def volume(ctx, vol:float):
 @bot.command(pass_context=True)
 async def skip(con): #skipping songs?
   songs[con.message.server.id]
-      await bot.say("Skip lagu")
     
     
     
