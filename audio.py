@@ -50,7 +50,7 @@ async def checking_voice(ctx):
             server = ctx.message.server
             voice_client = bot.voice_client_in(server)
             await voice_client.disconnect()
-            await bot.say("{} left because there was no audio playing for a while".format(bot.user.name))
+            await bot.say("{} Bot Keluar karena tidak di play music".format(bot.user.name))
         except:
             pass
 
@@ -112,17 +112,17 @@ async def play(ctx, *,url):
         players[ctx.message.server.id] = player
         # play_in.append(player)
         if players[ctx.message.server.id].is_live == True:
-            await bot.say("Can not play live audio yet.")
+            await bot.say("Belom bisa memutar musik.")
         elif players[ctx.message.server.id].is_live == False:
             player.start()
-            await bot.say("Now playing audio")
+            await bot.say("Memutar musik")
             playing[ctx.message.server.id] = True
 
 
 
 @bot.command(pass_context=True)
-async def queue(con):
-    await bot.say("There are currently {} audios in queue".format(len(songs)))
+async def list(con):
+    await bot.say("Ada {} lagu di antrian.".format(len(songs)))
 
 @bot.command(pass_context=True)
 async def pause(ctx):
