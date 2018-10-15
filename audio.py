@@ -115,7 +115,7 @@ async def play(ctx, *,url):
             await bot.say("Belom bisa memutar musik.")
         elif players[ctx.message.server.id].is_live == False:
             player.start()
-            await bot.say("Memutar musik")
+            await bot.say("Memutar lagu {}")
             playing[ctx.message.server.id] = True
 
 
